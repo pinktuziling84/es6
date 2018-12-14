@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+//   es5  的写法
+
+  function fn (a,b){
+      return a+b;
+  }
+
+  document.write(fn(1,2)+'<br>');
+  
+  
+
+  //es6 箭头函数写法1 
+
+/*
+  let add=(a,b)=>a+b;
+  let res=add(10,20);
+  
+  document.write(res)
+//  在箭头函数里 如果结果只有1行代码可以省略{}大括号  
+// 等价于    a+b ==={return a+b}
+*/
+
+  //es6 箭头函数写法2
+  let add=(a,b)=>{
+      
+      alert('我是箭头函数')
+      return a+b
+      };
+  let res=add(100,20);
+  
+  document.write(res)
+
+
+// 如果{}函数体里的代码不止2行代码 则 不能省略{}
+
+
+  //es6 箭头函数补充3  (直接定义默认值)
+
+
+
+/*
+  let  json={
+      a:'会打球',
+      b:'敲代码'
+
+  }
+
+  let fn2=({a,b='会学习'})=>console.log(a,b);
+
+
+   let res2= fn2(json);
+      document.write(res2);   //undefined  没有返回值   
+
+*/
+
+  let  json={
+      a:'会打球',
+    
+
+  }
+
+  let fn2=({a,b='会学习'})=>console.log(a,b);
+
+
+   let res2= fn2(json);
+      document.write(res2);   //undefined  没有返回值   
+
+
+
+
+
+document.write('<hr>')
+
+  //es6 箭头函数补充4  (数组的解构赋值)
+
+let=arr4=[1,2,3];
+let  fn4=(a,b,c)=>{
+    return a+b+c;
+}
+document.write(fn4(...arr4));
+
+
+
+
+
+
+    </script>
+</body>
+</html>

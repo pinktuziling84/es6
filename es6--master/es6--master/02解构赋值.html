@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    
+     // es6第二讲 结构赋值
+
+        // 1.0 变量的声明结构赋值
+
+        /*
+                let  [aa, bb, cc] = [1, 2, 3];
+                console.log(aa);
+                console.log(bb);
+                console.log(cc);
+        */
+       //2.0   给变量设置默认值 
+       let  [arr=1]=[];       //如果没有值 则呈现 默认值   
+         console.log(arr);
+         let [array=10]=[20];    //如果有值，则取给定的值 
+         console.log(array);
+
+         let  [ss=true]=[undefined];    //如果传进来的值是undefined  则还是取默认值  
+         console.log(ss);
+
+         let  [sss=true]=[null];       //如果传进来的值是null      null相当于有值，但值为null   则代表有值，只是这个值是一个null 对象 ，取null对象这个值
+         console.log(sss)
+
+
+
+    //   3.0 先申明后定义值的写法
+      let f;
+      [f=1]=[10];
+      console.log(f);
+   //  4.0  多个默认值定义     如果都有默认值，而且都有给定值 则取给定值 
+   let  [aa='xiaoxiao',bb='dada']=['da','xiao'];
+   console.log(aa);
+   console.log(bb);
+
+   let  [ccc='大大',ddd='小小']=['帅帅'];
+   console.log(ccc);
+   console.log(ddd);
+
+   console.log(ddd+ccc);
+   
+
+   let [aaaaa='我是默认值',bbbbb='我是第二个默认值']=['我是传进来的值',undefined];
+   console.log(aaaaa+bbbbb);
+
+    //5.0对象的解构赋值  
+    // let  {key:value}
+       let  {name,age}={name:'张三',age:'18'};
+       console.log(name+age);
+
+
+    // 有坑   错误的写法 
+
+/*
+      let  foo;
+      {foo}={foo:'李四'};
+      console.log(foo);
+*/
+
+
+   let  foo;
+   ({foo}={foo:"王五"})
+    console.log(foo)
+
+//    6.0  字符串的解构赋值 
+
+    let   [a,b,c,d]='我是一个字符串,我想要解构赋值';
+   
+   console.log(a)
+   console.log(b)
+   console.log(c)
+   console.log(d)
+
+
+    
+    </script> 
+</body>
+</html>

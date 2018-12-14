@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let a = 1;
+        console.log(a);
+
+        const b = 2;
+        console.log(b);
+
+        /*
+ const b=3;     // const 是常量声明，不允许再改变他的值 
+   console.log(b);
+*/
+
+
+        /*
+       {
+            let c = 10;
+        }
+        console.log(c); //let 声明的变量是局部变量 
+*/
+
+
+        // 在es6 中 {}的代表了作用域
+
+        let i = 20;
+        for (let i = 1; i < 10; i++) {
+            console.log(`循环体内的：${i}`)
+        }
+
+        console.log(`循环体外的${i}`); //没定义
+
+
+
+
+        console.log('-------------------------')
+       
+    </script>
+</body>
+
+</html>

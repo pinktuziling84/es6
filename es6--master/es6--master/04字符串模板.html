@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// <!-- es5 的写法 -->
+
+    let aa='前端es5';
+    let  es5=' 你好非常高兴又看到你来学校学习'+aa;
+
+    // 1.0 es6的写法
+
+  let  bb='前端es6';
+  let  es6=`你好非常高兴又看到你来学校学习${bb}`;
+
+
+// 2.0   es6 写法  支持标签  
+
+  let  Es6=` <div><h1>你好非常高兴</h1>又看到你来学校学习${bb}</div>`;
+      document.write(Es6)
+
+// 3.0 es 6 写法  支持运算 
+
+let    num1=2;
+let    num2=1;
+let  num3=`${num1+num2}`;
+document.write(num3);
+// console.log(num3);
+
+
+
+// 4.0  字符串的查找
+//   es5 的写法 
+//  let jie='吕小小';
+//  let  xiao='吕小小好像长白了';
+//    let you= xiao.indexOf(jie) ;  //查的索引  如果存在，返回这个字符串的位置
+//    document.write(you);  
+
+
+/*
+let jie='吕小杰';
+ let  xiao='吕小小好像长白了';
+   let you= xiao.indexOf(jie) ;  //查的索引  如果不存在，返回-1；
+   document.write(you);  
+*/
+
+//  4.0 es6 的写法 
+
+
+// let jie1='吕小杰';
+//  let  xiao1='吕小小好像长白了';
+//    let you1=xiao1.includes(jie1);    //如果不存在 ，直接返回布尔变量  false
+//    document.write(you1);  
+
+
+// 
+// let jie1='吕小';
+//  let  xiao1='吕小小好像长白了';
+//    let you1=xiao1.includes(jie1);    //如果存在 ，直接返回布尔变量  true;
+//    document.write(you1);   
+
+
+// 5.0  es6 字符串判断开始位置 和结束位置
+
+let jie1='吕小';
+ let  xiao1='吕小小好像长白了';
+   let you1=xiao1.startsWith(jie1);    
+   //startsWith 判断开头是否存在 返回布尔变量  如果存在 返回true;如果不存在 返回false;
+   
+   document.write(you1);  
+
+
+
+document.write('<br>')
+
+let jie2='吕小';
+ let  xiao2='好像长白了吕小';
+   let you2=xiao2.endsWith(jie2);    
+   //endsWith 判断开头是否存在 返回布尔变量
+   document.write(you2);  
+
+
+//  需要注意的地方   starts ends  都要加s  
+
+
+
+
+
+document.write('</br>');
+
+// 6.0  复制 字符串
+  let  lv='小小小';
+  let  xiao =lv.repeat(3);
+  document.write(xiao);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+

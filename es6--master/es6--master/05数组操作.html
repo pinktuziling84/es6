@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+
+// es 6 数组的方法   
+// 1.0   Array.from()
+//    json 数组格式的书写，跟普通的json 格式多了一个length     
+  let json={
+      '0':'张胜男',
+        '1':'女',
+        length:2
+  };
+//   只要是这种类型的json格式 我们就可以用es6 的方法转换成数组
+
+
+  let  arr=Array.from(json);
+  document.write(arr);
+
+
+// 注意 ：es6里的数组方法，大部分都挂在在Array对象身上在
+
+
+// 2.0   Array.of()  可以转换成数组 
+
+// 在开发中我们经常拿到了一个类似数组的字符串
+ 
+
+ var  str='[1,2,3,4]';
+
+
+ let arrs=Array.of(str);
+ document.write(arrs);
+
+
+
+// 3.0  find()实例方法
+// find 实例方法  
+// 所谓的实例方法就是并不是以Array对象开始的，而是必须有一个已经存在的数组，然后使用的方法，这就是实例方法（不理解请看下边的代码，再和上边的代码进行比对，你会有所顿悟）。
+// 这里的find方法是从数组中查找。在find方法中我们需要传入一个匿名函数，函数需要传入三个参数：
+
+// value：表示当前查找的值。
+// index：表示当前查找的数组索引。
+// arr：表示当前数组。
+// 在函数中如果找到符合条件的数组元素就进行return，
+// 并停止查找。你可以拷贝下边的代码进行测试，就会知道find作用。
+
+
+
+
+/*
+let  arr1=[1,2,3,4];
+
+let bool=arr.find(function(value,index,arr){
+    return value>5;  //如果查找不符合条件 就返回undefined
+})
+
+
+document.write(bool);      
+
+*/
+
+let  arr1=[1,2,3,4];
+
+let bool=arr1.find(function(value,index,arr){
+    return value>2;  //如果查找符合条件 就返回第一个符合条件的值
+})
+
+
+document.write(bool);    
+
+
+
+
+
+// 4.0  fill( )实例方法：
+// fill()也是一个实例方法，它的作用是把数组进行填充，
+// 它接收三个参数，
+// 第一个参数是填充的变量，
+// 第二个是开始填充的位置，是从数组的0开始，0代表第1个位置
+// 第三个是填充到的位置。  是从数组的长度开始，1代表第1个
+let arrFill=[1,2,3,4];
+
+
+ let result=arrFill.fill('吕小小',0,1);
+
+
+document.write(result);
+
+
+
+
+document.write('<br>')
+// 5.0 数组的遍历  for  of   
+
+
+/*
+let arrFills=[1,2,3,4];
+for (let item of arrFills){
+    document.write(item);
+}
+*/
+
+// 5.1 数组的遍历 遍历索引 
+
+
+/*
+let arrFills=[1,2,3,4];
+for (let key of arrFills.keys()){
+    document.write(key);
+}
+*/
+
+// 5.2  数组的遍历   索引跟值全部输出 
+
+/*
+let arrFills=[1,2,3,4];
+for (let key of arrFills.entries()){
+    document.write(key+'<br>');
+}
+*/
+
+// 5.3  数组的遍历   索引跟值全部输出,另一种写法  
+
+let arrFills=[1,2,3,4];
+for (let [key,val] of arrFills.entries()){
+    document.write(`${key}------${val}<br>`);
+}
+
+
+    </script>
+</body>
+</html>

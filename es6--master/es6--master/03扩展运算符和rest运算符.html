@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> 扩展运算符和rest运算符</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        /*
+                        // es5 的写法 1
+                        function fn(a, b, c) {
+                            console.log(a);
+                            console.log(b);
+                            console.log(c);
+                        }
+                        fn(10)
+                */
+
+        /*
+                //es5 的第二种写法 
+                function fns() {
+                    console.log(arguments[0]);
+                    console.log(arguments[1]);
+                    console.log(arguments[2]);
+
+                }
+                fns(100, 200);
+        */
+
+        // 1.0   es6 写法 
+        function arr(...arg) { //...arg  用于参数不确定的写法  
+            console.log(arg[0]);
+            console.log(arg[1]);
+            console.log(arg[2])
+
+        }
+
+
+        arr(1, 2);
+
+
+        //2.0  es6 写法  
+
+        function arrs(a, ...arg) { //...arg  代表剩下的参数 
+            console.log(a);
+            console.log(arg[0]);
+            console.log(arg[1]);
+        }
+        arrs('我', '其实', '很白')
+
+        /*
+                // 3.0  es6 的写法 
+
+                function es6(...[arg]) { //  ...arg  如果跟数组一起使用，可以直接解析数组里面的值 
+                    console.log(arg[0]);
+                    console.log(arg[1]);
+                    console.log(arg[2]);
+                    console.log(arg[3]);
+
+                }
+
+                es6([1, 2, 3, 4])
+        */
+
+
+        /* 4.0 扩展运算符的用处：我们先用一个例子说明，我们声明两个数组arr1和arr2，
+然后我们把arr1赋值给arr2，然后我们改变arr2的值，会发现arr1的值也改变了，因为我们这是对内存堆栈的引用，而不是真正的赋值。  
+*/
+
+
+        /*
+                let arr1 = [10, 20, 30];
+                let arr2 = [];
+                arr2 = arr1;
+                arr2.push('你好');
+                console.log(arr2);
+                console.log(arr1);       
+                 //跟我们实际想要的结果不一样  
+
+            // arr2=    [10, 20, 30, "你好"];
+            // arr1= [10, 20, 30];
+        */
+
+        let arr1 = [10, 20, 30];
+        let arr2 = [];
+        arr2 = [...arr1]; //...跟数组一起使用，代表把数组里的每个值解析出来
+
+        arr2.push('我又来了');
+        console.log(arr2);
+        console.log(arr1);
+
+
+
+
+        //   4.0  rest运算符  的数组  循环 
+
+        function fns(a, ...arg) {
+
+            for (let val of arg) // es6 的for 循环跟rest 参数的使用
+
+                console.log(val);
+        }
+
+        fns(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+
+
+
+
+        // for of循环： 可以循环数组， 不可以循环json， 该循环新增主要是为了循环map对象
+        // 循环数组：(用的很少)
+        // 1） 只循环值value：
+        var arr11 = ['apple', 'banana', 'appel', 'orange'];
+        for (var value in arr11) {
+            console.log(value); //'apple','banana','appel','orange'
+        }
+
+
+
+
+        // 2） 只循环索引key：
+        for (var key of arr1.keys()) {
+            console.log(key); //0,1,2,3
+        }
+        // 3） 值和索引都循环：
+        for (var name of arr1.entries()) {
+            console.log(name); //0 apple,1 banana,2 appel,3 orange
+        }
+
+   
+
+// 只循环索引key
+        var arr10 = ['apple', 'banana', 'appel', 'orange'];
+
+
+
+      for(var key of arr10.keys()){
+          console.log(key);
+      }
+
+//  值和索引都循环  第一种写法  
+    for (var name of arr10.entries()){
+        console.log(name);
+    }
+
+//  值和索引都循环  第二种写法  
+
+ for  (var [key,name]of arr10.entries()){
+        console.log(key+"------------"+name)
+ }
+
+
+    
+
+
+
+
+    </script>
+
+</body>
+
+</html>

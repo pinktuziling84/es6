@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6中的promise的出现给我们很好的解决了回调地狱的问题，
+        // 在使用ES5的时候，在多层嵌套回调时，
+        // 写完的代码层次过多，很难进行维护和二次开发，
+        
+        // ES6认识到了这点问题，现在promise的使用，完美解决了这个问题
+
+// promise的基本用法
+// promise执行多步操作非常好用，
+// 那我们就来模仿一个多步操作的过程
+// ，那就以吃饭为例吧。要想在家吃顿饭，
+// 是要经过三个步骤的。
+
+// 洗菜做饭。
+// 坐下来吃饭。
+// 收拾桌子洗碗。
+
+
+let state=1;
+function step1(resolve,reject){
+    console.log('1 开始-洗菜做饭');
+    if(state==1){
+       resolve('洗菜做饭--完成'); 
+    }else {
+        reject('洗菜做饭--出错');
+    }
+}
+
+function step2(resolve,reject){
+    console.log('2 开始-吃饭');
+    if(state==1){
+        resolve('坐下来吃饭-完成') 
+    }else {
+        reject('做下来吃饭--出错');
+    }
+}
+
+function step3(resolve,reject){
+    console.log('3 开始-收拾桌子洗碗');
+    if(state==1){
+     resolve('收拾桌子洗碗')
+    }else{
+   reject('收拾桌子洗碗----出错')
+    }
+}
+
+
+new Promise(step1).then(function(val){
+    console.log(val);
+    return new Promise(step2);
+}).then(function(val){
+    console.log(val);
+    return new Promise(step3);
+}).then(function(val){
+    console.log(val);
+    return val;
+})
+    </script>
+</body>
+</html>

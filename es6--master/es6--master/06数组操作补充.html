@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+//    in的用法
+// in是用来判断对象或者数组中是否存在某个值的。
+// 我们先来看一下用in如何判断对象里是否有某个值。     
+        
+        let obj={
+            a:'你好帅',
+            b:'你真的好帅'
+        }
+        document.write('a' in obj);  
+        // 返回布尔变量   存在返回 true ,不存在返回false
+
+
+/*
+// 数组判断
+
+// 先来看一下ES5判断的弊端，
+// 以前会使用length属性进行判断，
+// 为0表示没有数组元素。但是这并不准确，
+// 或者说真实开发中有弊端。
+
+
+let arr=[,,,,,];
+console.log(arr.length); //5
+
+let arr=[,,,,,];
+console.log(arr.length); //5
+// 上边的代码输出了5，
+// 但是数组中其实全是空值，
+// 这就是一个坑啊。那用ES6的in就可以解决这个问题。
+
+
+let arr=[,,,,,];
+console.log(0 in arr); //false
+
+let arr1=['aa','bb'];
+console.log(0 in arr1);  // true
+
+let arr=[,,,,,];
+console.log(0 in arr); //false
+ 
+let arr1=['aaa','bbb'];
+console.log(0 in arr1);  // true
+
+// 注意：这里的0指的是数组下标位置是否为空。
+
+*/
+
+
+// <!-- 
+// 数组的遍历方法
+// 6.0 forEach -->
+
+
+document.write('<br>')
+
+// let arr10=['aa','bb','ccc'];
+// arr10.forEach((val,index)=>{
+//     document.write(`${val}----${index}<br>`);
+// })
+
+
+let arr11=['11',,'333','4444'];
+
+arr11.forEach((val,index)=>{
+    document.write(val+'<br>')
+})
+
+// <!-- 
+// 弊端：forEach循环的特点是会自动省略为空的数组元素，
+// 相当于直接给我们筛空了。当是有时候也会给我们帮倒忙。 -->
+
+
+
+for(let item of arr11){
+    console.log(item);
+}
+
+
+
+
+// map 方法  map在这里起到一个替换的作用
+
+
+
+let  arr12=['qq','aa']
+
+let arr13=arr12.map(x=>'你好');
+
+document.write(arr13);
+
+
+// filter   这里也有循环的意思 
+let  arr14=['qq','aa']
+
+
+let arr15=arr14.filter(x=>console.log(x));
+
+
+
+    </script>
+</body>
+</html>

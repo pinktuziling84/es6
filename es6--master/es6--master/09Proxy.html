@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//   es5 传统上方法      
+ var obj={
+     add:function(val){
+         return val +10;
+     },
+     name:'我是吕小小'
+
+ };
+ console.log(obj.add(10));
+ console.log(obj.name);
+
+
+
+//  es6  的 Proxy 
+// 声明Proxy
+// 我们用new的方法对Proxy进行声明。可以看一下声明Proxy的基本形式。
+
+
+// new Proxy（{},{}）;
+// 1
+// new Proxy（{},{}）;
+// 需要注意的是这里是两个花括号，
+// 第一个花括号就相当于我们方法的主体，
+// 后边的花括号就是Proxy代理处理区域，相当于我们写钩子函数的地方。
+
+// 现在把上边的obj对象改成我们的Proxy形式。
+
+
+var   pro=new Proxy({
+  add:function(val){
+      return val +10;
+  },
+  name:'我是吕小小'
+
+
+},{
+    get:function(target,key,property){
+        console.log('come in get' )
+        return target[key];
+    },
+    set:function(target,key ,value,receiver){
+        console.log(`setting ${key}==${value}`);
+        return target[key]=value;
+    }
+
+});
+console.log(pro.name);
+pro.name='ni hao ';
+console.log(pro.name);
+// get属性
+
+// get属性是在你得到某对象属性值时预处理的方法，他接受三个参数
+
+// target：得到的目标值
+// key：目标的key值，相当于对象的属性
+// property：这个不太常用
+// set属性
+
+// set属性是值你要改变Proxy属性值时，进行的预先处理。它接收四个参数。
+
+// target:目标值。
+// key：目标的Key值。
+// value：要改变的值。
+// receiver：改变前的原始值。
+
+
+ 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //  1.0  ES6允许把声明的变量直接赋值给对象，我们看下面的例子。  
+     let name='张三';
+     let age='18';
+     let obj={name,age};
+     console.log(obj);
+
+//2.0 对象Key值构建
+let  key ='keys';
+ let objs={
+     [key]:'web'
+ };
+console.log(objs.keys)
+
+
+// 3.0  那ES6为我们提供了is方法进行对比
+
+   console.log(+0===-0);    //true
+   console.log(NaN===NaN);  //flase
+   console.log(Object.is(+0,-0));//flase
+   console.log(Object.is(NaN,NaN));//true
+//    ===为同值相等，is()为严格相等。
+
+// 4.0  Object.assign(  )合并对象
+// 操作数组时我们经常使用数组合并，那对象也有合并方法，
+// 那就是assgin(  )。
+
+
+let   a={a:"你好"};
+let   b={b:"你好吗"};
+let   c={c:"你真的好吗"};
+let    ss={ccc:"你真的好帅"};
+let d=Object.assign(a,b,c);
+console.log(d);
+
+let  j=Object.assign(d,ss);
+console.log(j);
+
+
+    </script>
+</body>
+</html>
