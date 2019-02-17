@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Map 结构原生提供三个遍历器生成函数和一个遍历方法。
+
+        keys()：返回键名的遍历器。
+        values()：返回键值的遍历器。
+        entries()：返回所有成员的遍历器。
+        forEach()：遍历 Map 的所有成员。
+        需要特别注意的是，Map 的遍历顺序就是插入顺序。
+    -->
+    <script>
+        const map = new Map([
+            ['F','no'],
+            ['T','yes']
+        ]);//F 
+           //T
+        for(let key of map.keys()){
+            console.log(key)
+        }
+        for(let value of map.values()){
+            console.log(value)
+        }
+        //no
+        //yes
+        for(let item of map.entries()){
+            console.log(item[0],item[1])
+        }
+        // "F" "no"
+        // "T" "yes"
+        for (let [key, value] of map.entries()) {
+             console.log(key, value);
+        }
+        // "F" "no"
+        // "T" "yes"
+        // 等同于使用map.entries()
+            for (let [key, value] of map) {
+                console.log(key, value);
+            }
+            // "F" "no"
+            // "T" "yes"
+    </script>
+</body>
+</html>

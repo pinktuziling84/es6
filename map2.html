@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const set = new Set([
+            ['foo',1],
+            ['bar',2]
+        ]);
+        const m1 = new Map(set);
+        m1.get('foo')//1
+
+        const m2 = new Map([['baz',3]]);
+        const m3 = new Map(m2);
+        m3.get('baz')//3
+    </script>
+</body>
+</html>

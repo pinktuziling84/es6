@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const m = new Map();
+        const o = {p:'hello world'}
+        m.set(o,'content')
+       let result = m.get(o)
+        console.log(result)//content
+        //上面代码使用 Map 结构的set方法，将对象o当作m的一个键，
+        //然后又使用get方法读取这个键，接着使用delete方法删除了这个键。
+        
+    </script>
+</body>
+</html>
