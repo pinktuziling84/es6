@@ -1,0 +1,22 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "CommonJS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangmiaozero/es6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangmiaozero/es6/issues"
+  },
+  "homepage": "https://github.com/wangmiaozero/es6#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
