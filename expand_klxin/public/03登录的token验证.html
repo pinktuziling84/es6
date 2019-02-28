@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>token的简单用法测试</title>
+</head>
+<body>
+    <button class="btn">登录</button>
+    <button class="getUser">取用户数据</button>
+</body>
+</html>
+<script>
+var btn = document.querySelector('.btn')
+var getUser = document.querySelector('.getUser')
+btn.onclick = function () {
+    fetch('/api/v1/login')
+    .then(res => {
+        return res.json()
+    })
+    .then(res => {
+        console.log(res)
+        localStorage.setItem('jwt', res.msg)
+    })
+}
+getUser.onclick = function () {
+    // 将用户信息携带过去
+    fetch(`/api/v1/getuser?token=${localStorage.jwt}`)
+    .then(res => {
+        return res.json()
+    })
+    .then(res => {
+        console.log(res)
+        localStorage.setItem('jwt', res.msg)
+    })
+}
+</script>

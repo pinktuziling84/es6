@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <button class="btn">发送ajax请求</button>
+</body>
+</html>
+<script>
+    $('.btn').on('click', function () {
+        // 1. 找自己的服务器
+        // 2. 服务器发送请求给第三方
+        // 3. 第三方返回数据 --> 自己服务器 --> 客户端
+        fetch('http://127.0.0.1:3000/api/v1/proxy')
+        .then(result => {
+            return result.json()
+        })
+        .then(res => {
+            console.log(res)
+        })
+    })
+</script>

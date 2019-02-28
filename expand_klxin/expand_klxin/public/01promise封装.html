@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <button class="btn">发送ajax请求</button>
+</body>
+</html>
+<script>
+    function promiseAjax (obj = {}) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                url: obj.url,
+                type: obj.type,
+                data: obj.data,
+                dataType: 'json',
+                success: function(res) {
+                    resolve(res)
+                },
+                error: function (err) {
+                    reject(err)
+                }
+            })
+        })
+    }
+    $('.btn').on('click', function () {
+        // 1. 自己封装的promise请求方法
+        // promiseAjax({
+        //     url: '/api/v1/test',
+        //     type: 'get',
+        //     data: {}
+        // })
+        // .then(result => {
+        //     console.log(result)
+        // })
+        // .then(() => {
+
+        // })
+        // .then(() => {}) // ....
+
+        // 2. 下面是分步
+        // var s1 = promiseAjax({
+        //     url: '/api/v1/test',
+        //     type: 'get',
+        //     data: {}
+        // })
+        // var s2 = s1.then(result => {
+        //     console.log(result)
+        // })
+        // var s3 = s2.then(() => {
+
+        // })
+        
+        // 3. fetch请求
+        fetch('/api/v1/test')
+        .then(res => {
+            return res.json()
+        })
+        .then(res => {
+            console.log(res)
+        })
+        // var s4 = fetch('/api/v1/test')
+        // .then(res => {
+        //     return res.json()
+        // })
+        // s4.then(res => {
+        //     console.log(res)
+        // })
+        // console.log(s4)
+    })
+
+
+    // 
+</script>

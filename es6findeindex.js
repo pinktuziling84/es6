@@ -1,1 +1,1 @@
-[1,2,3,4,'aa'].findIndex(item=>{console.log(item)})
+[1,2,3,4,'aa'].findIndex(item=>{return item === 'aa'})
